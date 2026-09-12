@@ -28,7 +28,9 @@ git
 github
 VS code
 
-make sure the OPENROUTER_API_KEY environment is configured 
+make sure the OPENROUTER_API_KEY environment is configured
+the run
+python app.py
 
 ##Security
 the openrouter API key is stored as an environmental variable and is not included in the repository
