@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+
+# Virtual environments
+venv/
+.venv/
+
+# Secrets
+*.key
+*.pem
