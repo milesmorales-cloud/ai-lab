@@ -14,12 +14,15 @@ def send_message(messages):
         "messages": messages,
     }
 
-    response = requests.post(
-        OPENROUTER_URL,
-        headers=headers,
-        json=data,
-        timeout=30,
-    )
+    try:
+        response = requests.post(
+            OPENROUTER_URL,
+            headers=headers,
+            json=data,
+            timeout=30,
+        )
+    except requests.exceptions.RequestException as error:
+        raise RuntimeError("Unable to connect to OpenRouter.") from error
 
     result = response.json()
 
