@@ -1,6 +1,6 @@
 import requests
 
-from config import API_KEY, OPENROUTER_URL, MODEL
+from config import API_KEY, MODEL, OPENROUTER_URL
 
 
 def send_message(messages):
