@@ -8,38 +8,37 @@ A Python AI client that connects to the OpenRouter API and uses automatic AI mod
 - Automatically selects an available AI model
 - Supports multi-turn conversations
 - Keeps the API key outside the source code
-- Uses a structured Python project
+- Uses a Python virtual environment
+- Includes automated tests with pytest
+- Uses Ruff for code quality checks
 - Version controlled with Git and GitHub
 
 ## Project Structure
 
 ```text
 ai-lab/
-├── app.py
-├── ai_client.py
-├── config.py
+├── .venv/                 # Local Python virtual environment
+├── tests/
+│   ├── conftest.py
+│   └── test_ai_client.py
+├── app.py                 # Command-line application
+├── ai_client.py           # OpenRouter API client
+├── config.py              # Configuration
+├── .env                   # Local API key (not committed)
 ├── .gitignore
+├── requirements.txt       # Python dependencies
 └── README.md
-
 ## Technologies
-python 
-Openrouter API
-git
-github
-VS code
 
-make sure the OPENROUTER_API_KEY environment is configured
-the run
-python app.py
+- Python
+- OpenRouter API
+- Requests
+- python-dotenv
+- pytest
+- Ruff
+- Git
+- GitHub
+- VS Code
+##Setup
 
-##Security
-the openrouter API key is stored as an environmental variable and is not included in the repository
-
-Save it.
-
-### Step 2 — Check Git
-
-Run:
-
-```bash
-git status
+To set up the AI Lab project, clone the repository, navigate into the project directory, and create a Python virtual environment. Activate the virtual environment and install the required dependencies from requirements.txt. Create a local .env file and add your OpenRouter API key as OPENROUTER_API_KEY. The .env file is excluded from Git to protect the API key. Once the setup is complete, run the application using python app.py.
