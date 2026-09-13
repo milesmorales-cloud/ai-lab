@@ -4,20 +4,30 @@ A Python AI client that connects to the OpenRouter API and uses automatic AI mod
 
 ## Features
 
-- Connects to OpenRouter
-- Automatically selects an available AI model
+- Connects to the OpenRouter API
+- Automatically selects an available AI model using `openrouter/auto`
 - Supports multi-turn conversations
+- Handles API and network errors
+- Uses a 30-second request timeout
 - Keeps the API key outside the source code
-- Uses a Python virtual environment
+- Provides CLI commands for managing conversations
 - Includes automated tests with pytest
 - Uses Ruff for code quality checks
 - Version controlled with Git and GitHub
+
+## CLI Commands
+
+| Command | Description |
+|---|---|
+| `/help` | Show available commands |
+| `/model` | Show the last model selected by OpenRouter |
+| `/clear` | Clear the current conversation |
+| `/exit` | Exit the application |
 
 ## Project Structure
 
 ```text
 ai-lab/
-├── .venv/                 # Local Python virtual environment
 ├── tests/
 │   ├── conftest.py
 │   └── test_ai_client.py
@@ -28,17 +38,70 @@ ai-lab/
 ├── .gitignore
 ├── requirements.txt       # Python dependencies
 └── README.md
-## Technologies
+Technologies
+Python
+OpenRouter API
+Requests
+python-dotenv
+pytest
+Ruff
+Git
+GitHub
+VS Code
+Setup
 
-- Python
-- OpenRouter API
-- Requests
-- python-dotenv
-- pytest
-- Ruff
-- Git
-- GitHub
-- VS Code
-##Setup
+Clone the repository:
 
-To set up the AI Lab project, clone the repository, navigate into the project directory, and create a Python virtual environment. Activate the virtual environment and install the required dependencies from requirements.txt. Create a local .env file and add your OpenRouter API key as OPENROUTER_API_KEY. The .env file is excluded from Git to protect the API key. Once the setup is complete, run the application using python app.py.
+git clone git@github.com:milesmorales-cloud/ai-lab.git
+
+Navigate into the project:
+
+cd ai-lab
+
+Create a Python virtual environment:
+
+python -m venv .venv
+
+Activate it:
+
+source .venv/bin/activate
+
+Install the dependencies:
+
+pip install -r requirements.txt
+
+Create a .env file in the project root and add your OpenRouter API key:
+
+OPENROUTER_API_KEY=your_api_key_here
+
+The .env file is excluded from Git to prevent the API key from being committed.
+
+Running the Application
+
+Start the AI client:
+
+python app.py
+Testing
+
+Run the automated tests:
+
+pytest
+
+The project currently includes tests for:
+
+Successful API requests
+API errors
+Network errors
+Code Quality
+
+Run Ruff:
+
+ruff check .
+
+Ruff is used to check the project for Python code-quality issues and organize imports.
+
+Security
+
+The OpenRouter API key is stored in a local .env file and is excluded from Git using .gitignore.
+
+Never commit API keys, passwords, tokens, or other secrets to GitHub.
