@@ -18,6 +18,7 @@ def send_message(messages):
         OPENROUTER_URL,
         headers=headers,
         json=data,
+        timeout=30,
     )
 
     result = response.json()
