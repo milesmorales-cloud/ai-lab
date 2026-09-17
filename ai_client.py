@@ -1,11 +1,11 @@
 import requests
 
-from config import API_KEY, MODEL, OPENROUTER_URL
+from config import MODEL, OPENROUTER_API_KEY, OPENROUTER_URL
 
 
 def send_message(messages):
     headers = {
-        "Authorization": f"Bearer {API_KEY}",
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
     }
 
@@ -33,3 +33,5 @@ def send_message(messages):
         "model": result["model"],
         "message": result["choices"][0]["message"]["content"],
     }
+
+

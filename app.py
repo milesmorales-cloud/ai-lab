@@ -1,4 +1,4 @@
-from ai_client import send_message
+from provider_client import send_message
 
 
 def main():
